@@ -5,6 +5,7 @@ import {
   mainBody,
   about,
   repos,
+    extraRepos,
   leadership,
   skills,
   getInTouch,
@@ -22,6 +23,7 @@ import GetInTouch from "./components/home/GetInTouch.jsx";
 import Leadership from "./components/home/Leadership.jsx";
 
 import Experience from "./components/home/Experience";
+import {FrostOrm} from "./components/home/frost-orm";
 
 const Home = React.forwardRef((props, ref) => {
   return (
@@ -55,6 +57,15 @@ const Home = React.forwardRef((props, ref) => {
           specfic={repos.specificRepos}
         />
       )}
+      {extraRepos.show && (
+        <Project
+          heading={extraRepos.heading}
+          username={extraRepos.gitHubUsername}
+          length={extraRepos.reposLength}
+          specfic={extraRepos.specificRepos}
+        />
+      )}
+        <FrostOrm/>
       {leadership.show && (
         <Leadership
           heading={leadership.heading}
